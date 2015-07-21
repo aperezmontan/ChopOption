@@ -6,11 +6,20 @@ class ApplicationController < ActionController::Base
 
 
   def current_user
-    @current_user ||= User.find_by_id(session[:user_id])
+    @current_user ||= Player.find_by_id(session[:user_id])
   end
 
   def logged_in?
     current_user != nil
+  end
+
+  private
+
+  def require_login
+    unless logged_in?
+      flash[:error] = "Please sign in."
+      redirect_to signin_path
+    end
   end
 
 end

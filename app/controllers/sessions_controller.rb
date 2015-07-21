@@ -1,17 +1,17 @@
 class SessionsController < ApplicationController
 
-  def home
+  def new
 
   end
 
   def create
-    user = User.find_by(email: params[:email])
-    if (user && user.authenticate(params[:password]))
-      session[:user_id] = user.id
+    player = Player.where("name = ? OR email = ?", params[:login], params[:login]).first
+    if (player && player.authenticate(params[:password]))
+      session[:user_id] = player.id
       redirect_to root_path
     else
       flash[:error] = "Either username or password are incorrect."
-      redirect_to login_path
+      redirect_to signin_path
     end
   end
 
