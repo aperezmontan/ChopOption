@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+header {
+  color: red;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: italic;
+  font-size: 6em;
+}
+
+/*body {
+  color: black;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 900;
+}*/
+
+body {
+  color: black;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: lighter;
+  font-size: 2.5em;
+}
+
+.logoContainer {
+/*  width: 256px;
+  height: 256px;*/
+
+
+  img {
+    width: 50%;
+    height: auto;
+  }
+}
