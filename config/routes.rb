@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     resources :entries
   end
 
-  get 'login'   => 'sessions#new'
-  get 'logout'  => 'sessions#destroy'
-  get 'signup'   => 'users#new'
-  root 'sessions#home'
+  get 'signin'   => 'sessions#new'
+  get 'signout'  => 'sessions#destroy'
+  get 'signup'   => 'players#new'
+  root 'pools#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

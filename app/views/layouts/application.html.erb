@@ -4,12 +4,22 @@
   <title>chop/op</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Josefin+Sans|Titillium+Web:900' %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Josefin+Sans|Sanchez|Titillium+Web:900' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <header class='main-header'>chop/op</header>
+<% if @current_user %>
+  <header class='main-header'>chop <i class="fa fa-bolt"></i>op</header>
+<% else %>
+  <div id="login-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="active item one"></div>
+      <div class="item two"></div>
+    </div>
+  </div>
+  <div class='login-div'>chop <i class="fa fa-bolt"></i>op</div>
+<% end %>
 
 <%= yield %>
 
