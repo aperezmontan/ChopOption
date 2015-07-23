@@ -8,11 +8,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if @current_user %>
-    <header class='main-header'>chop/op</header>
-  <% else %>
-    <div class='login-header'>chop/op</div>
-  <% end %>
+
+<% if @current_user %>
+  <header class='main-header'>chop <i class="fa fa-bolt"></i>op</header>
+<% else %>
+  <div id="login-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="active item one"></div>
+      <div class="item two"></div>
+    </div>
+  </div>
+  <div class='login-div'>chop <i class="fa fa-bolt"></i>op</div>
+<% end %>
 
 <%= yield %>
 
