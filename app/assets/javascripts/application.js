@@ -16,6 +16,37 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(document).ready(function() {
+$(document).on('ready page:load', function() {
     $('.carousel').carousel({interval: 3000});
-  });
+
+    nav('#profile', '/players/show','GET');
+    nav('#results', '/players/show','GET');
+    nav('#messages','/players/show','GET');
+    nav('#4-for-4',  '/pools/show', 'GET');
+    nav('#6-for-6',  '/pools/show', 'GET');
+    nav('#knockout', '/pools/show', 'GET');
+    nav('#streak',   '/pools/show', 'GET');
+
+
+});
+
+var nav = function(selector, url, method) {
+  $(selector).on('click', function(event){
+    event.preventDefault();
+    $.ajax({
+      method: method,
+      url: url,
+    })
+    .done(function ( response ) {
+      console.log(response);
+      $( "li" ).removeClass( "active" );
+      if (url == '/pools/show'){
+        $('#pools').addClass("active");
+      }
+      $(selector).parent("li").addClass("active");
+      $(".page-content").slideToggle( "slow" );
+      $(".page-content").html(response).hide();
+      $(".page-content").slideToggle( "slow" );
+      });
+  })
+}

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'signin'   => 'sessions#new'
   get 'signout'  => 'sessions#destroy'
   get 'signup'   => 'players#new'
-  root 'pools#index'
+  root 'players#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
