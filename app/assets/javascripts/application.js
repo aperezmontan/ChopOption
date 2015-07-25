@@ -18,15 +18,22 @@
 
 $(document).on('ready page:load', function() {
     $('.carousel').carousel({interval: 3000});
+    $('.rules-div').hide();
 
-    nav('#profile', '/players/show','GET');
-    nav('#results', '/players/show','GET');
-    nav('#messages','/players/show','GET');
-    nav('#4-for-4',  '/pools/show', 'GET');
-    nav('#6-for-6',  '/pools/show', 'GET');
-    nav('#knockout', '/pools/show', 'GET');
-    nav('#streak',   '/pools/show', 'GET');
+    nav('#profile',  '/players/show','GET');
+    nav('#results',  '/players/show','GET');
+    nav('#messages', '/players/show','GET');
+    nav('#4-for-4',  '/pools/show?pool_id=1', 'GET');
+    nav('#6-for-6',  '/pools/show?pool_id=2', 'GET');
+    nav('#knockout', '/pools/show?pool_id=3', 'GET');
+    nav('#streak',   '/pools/show?pool_id=4', 'GET');
 
+    rulesToggle('#rules-button','.pools')
+
+    $('#rules-button').on('click', function(event){
+      console.log('pressing button')
+      $('.pools').slideToggle( "slow" );
+    })
 
 });
 
@@ -38,7 +45,7 @@ var nav = function(selector, url, method) {
       url: url,
     })
     .done(function ( response ) {
-      console.log(response);
+      // console.log(response);
       $( "li" ).removeClass( "active" );
       if (url == '/pools/show'){
         $('#pools').addClass("active");
@@ -50,3 +57,8 @@ var nav = function(selector, url, method) {
       });
   })
 }
+
+var rulesToggle = function(selector,elementToToggle) {
+
+}
+

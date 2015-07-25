@@ -54,7 +54,8 @@ ActiveRecord::Schema.define(version: 20150720211437) do
 
   create_table "pools", force: :cascade do |t|
     t.string   "name",            null: false
-    t.integer  "number_of_teams", null: false
+    t.string   "number_of_teams", null: false
+    t.text     "description",     null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
