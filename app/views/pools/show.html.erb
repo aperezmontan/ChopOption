@@ -1,9 +1,10 @@
 <div id="rules-div">
   <button type="button" id="rules-button" class="btn btn-primary btn-md btn-block">Rules</button>
 </div>
+<p></p>
 <div id="rules-text">
-  <div class="col-xs-12" id="game">Game: <span class="games-rules"><%= @pool.name %></span></div>
-  <div class="col-xs-12" id="picks">Number of picks: <span class="games-rules"><%= @pool.number_of_teams %></span></div>
+  <div class="col-xs-12" id="game"><p>Game: <span class="games-rules"><%= @pool.name %></span></p></div>
+  <div class="col-xs-12" id="picks"><p>Number of picks: <span class="games-rules"><%= @pool.number_of_teams %></span></p></div>
   <div class="col-xs-12" id="description"><p>Rules: <span class="games-rules"><%= @pool.description %></span></p></div>
 </div>
-    <%= render 'form' %>
+<%= render 'form' %>

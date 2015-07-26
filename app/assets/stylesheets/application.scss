@@ -81,6 +81,16 @@
   font-style: italic;
   font-size: 18vw;
   text-align: center;
+
+  a {
+    text-decoration: none;
+    color: red;
+  }
+}
+
+#flash_msg_container {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .pools {
@@ -92,13 +102,17 @@
   margin-right: 10px;
 }
 
+#rules-text {
+  display: none;
+}
+
 #games {
   margin: 0 auto !important;
   float: none !important;
 }
 
 #games table {
-  float: right;
+  // float: right;
 }
 
 #games td, th {
@@ -118,8 +132,9 @@
   border: none;
 }
 
-#login-form {
-
+.create-player-button {
+  background-color: #3498db;
+  border: none;
 }
 
 #brand-color {

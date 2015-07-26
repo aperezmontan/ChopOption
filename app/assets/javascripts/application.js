@@ -18,7 +18,10 @@
 
 $(document).on('ready page:load', function() {
     $('.carousel').carousel({interval: 3000});
-    $('.rules-div').hide();
+
+    $('.page-content').on('click', '#rules-button', function(){
+      $('.page-content #rules-text').slideToggle('slow');
+    })
 
     nav('#profile',  '/players/show','GET');
     nav('#results',  '/players/show','GET');
@@ -28,14 +31,29 @@ $(document).on('ready page:load', function() {
     nav('#knockout', '/pools/show?pool_id=3', 'GET');
     nav('#streak',   '/pools/show?pool_id=4', 'GET');
 
-    rulesToggle('#rules-button','.pools')
+    // rulesToggle('#rules-button','.pools');
 
-    $('#rules-button').on('click', function(event){
-      console.log('pressing button')
-      $('.pools').slideToggle( "slow" );
-    })
+    signUp('.signup-button','players/new','GET');
+
 
 });
+
+var signUp = function(selector, url, method) {
+  $(selector).on('click', function(event){
+    event.preventDefault();
+    $.ajax({
+      method: method,
+      url: url,
+    })
+    .done(function ( response ) {
+      // console.log(response);
+      $("#login-form-container").fadeOut(function(){
+        $("#login-form-container").html(response).hide();
+      });
+      $("#login-form-container").fadeIn( "slow" );
+      });
+  })
+}
 
 var nav = function(selector, url, method) {
   $(selector).on('click', function(event){
@@ -45,20 +63,20 @@ var nav = function(selector, url, method) {
       url: url,
     })
     .done(function ( response ) {
-      // console.log(response);
       $( "li" ).removeClass( "active" );
       if (url == '/pools/show'){
         $('#pools').addClass("active");
       }
       $(selector).parent("li").addClass("active");
-      $(".page-content").slideToggle( "slow" );
-      $(".page-content").html(response).hide();
+      $(".page-content").slideToggle( "slow", function(){
+        $(".page-content").html(response).hide();
+      });
       $(".page-content").slideToggle( "slow" );
       });
   })
 }
 
-var rulesToggle = function(selector,elementToToggle) {
+// var rulesToggle = function(selector,elementToToggle) {
 
-}
+// }
 
