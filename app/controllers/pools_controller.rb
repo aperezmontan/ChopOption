@@ -1,4 +1,5 @@
 class PoolsController < ApplicationController
+  before_action :get_pool, only: [:show]
   before_action :require_login
 
   def index
@@ -6,7 +7,6 @@ class PoolsController < ApplicationController
   end
 
   def show
-    @pool = Pool.new
     respond_to do |format|
       if request.xhr?
         format.html { render :show, layout: false}
@@ -14,6 +14,12 @@ class PoolsController < ApplicationController
         format.html { render :show }
       end
     end
+  end
+
+  private
+
+  def get_pool
+    @pool = Pool.find_by(id: params[:pool_id])
   end
 
 end

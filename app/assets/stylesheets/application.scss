@@ -63,6 +63,11 @@
     z-index:2;
 }
 
+.games-rules {
+  color: red;
+  font-weight: bold;
+}
+
 .main-header {
   color: red;
   font-family: 'Titillium Web', sans-serif;
@@ -76,6 +81,45 @@
   font-style: italic;
   font-size: 18vw;
   text-align: center;
+
+  a {
+    text-decoration: none;
+    color: red;
+  }
+}
+
+#flash_msg_container {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.pools {
+  margin: auto;
+}
+
+#rules-div {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#rules-text {
+  display: none;
+}
+
+#games {
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+#games table {
+  // float: right;
+}
+
+#games td, th {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  vertical-align: middle;
 }
 
 .signin-button {
@@ -88,8 +132,9 @@
   border: none;
 }
 
-#login-form {
-
+.create-player-button {
+  background-color: #3498db;
+  border: none;
 }
 
 #brand-color {
