@@ -35,6 +35,11 @@ $(document).on('ready page:load', function() {
 
     signUp('.signup-button','players/new','GET');
 
+    // $(function() {
+    //   $('#datetimepicker1').datetimepicker({
+    //     language: 'pt-BR'});
+    // });
+
     // poolSelect(".page-content #home-team-1-box").on('click', function(){
 
     // })
