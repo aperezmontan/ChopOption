@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   before_action :require_login, only: [:show]
+  after_action :current_url
 
   def show
     @player = Player.where(id: current_user.id)

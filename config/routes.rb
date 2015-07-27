@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :sessions, only: [:create]
   resources :pools
+  resources :games, only: [:new]
   resources :players do
     resources :entries
   end

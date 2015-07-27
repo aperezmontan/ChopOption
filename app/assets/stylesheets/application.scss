@@ -106,6 +106,18 @@
   display: none;
 }
 
+.team-cell {
+  cursor: pointer;
+}
+
+.team-cell:hover {
+  background: #3498db;
+}
+
+.team-select {
+  display: none;
+}
+
 #games {
   margin: 0 auto !important;
   float: none !important;
@@ -137,6 +149,11 @@
   border: none;
 }
 
+.new-game-button {
+  background-color: #3498db;
+  border: none;
+}
+
 #brand-color {
   color: red;
 }
@@ -154,9 +171,9 @@
   padding: auto 0;
 }
 
-.login-buttons {
-  float: right;
-}
+// .login-buttons {
+//   float: right;
+// }
 
 .label-font {
   color: black;

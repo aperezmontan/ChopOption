@@ -1,0 +1,38 @@
+<form>
+  <div id="game 1" class="col-xs-12">
+    1.
+    <div class="btn-group">
+      <button class="btn dropdown-toggle" data-toggle="dropdown">
+      Time
+      <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <% @teams.each do |team| %>
+        <li><%= "#{team.location} #{team.name}" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button class="btn dropdown-toggle" data-toggle="dropdown">
+      Away Team
+      <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <% @teams.each do |team| %>
+        <li><%= "#{team.location} #{team.name}" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button class="btn dropdown-toggle" data-toggle="dropdown">
+      Home Team
+      <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <% @teams.each do |team| %>
+        <li><%= "#{team.location} #{team.name}" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</form>

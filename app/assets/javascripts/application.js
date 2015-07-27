@@ -35,6 +35,10 @@ $(document).on('ready page:load', function() {
 
     signUp('.signup-button','players/new','GET');
 
+    // poolSelect(".page-content #home-team-1-box").on('click', function(){
+
+    // })
+
 
 });
 
