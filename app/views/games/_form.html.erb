@@ -1,41 +1,23 @@
-<h2>Games</h2>
-
-<form>
-  <div id="game 1" class="col-xs-12">
-    1.
-
-    <div class="btn-group">
-      <button class="btn dropdown-toggle" data-toggle="dropdown">
-      Time
-      <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <% @teams.each do |team| %>
-        <li><%= "#{team.location} #{team.name}" %></li>
-        <% end %>
-      </ul>
+<div class="container">
+    <div class='col-sm-2'>
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker3' tabindex='-1'>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                    <span class="caret"></span>
+                </span>
+                <input type='text' class="form-control" />
+            </div>
+        </div>
     </div>
-    <div class="btn-group">
-      <button class="btn dropdown-toggle" data-toggle="dropdown">
-      Away Team
-      <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
+    <select class="selectpicker span3" multiple title="Away Team">
         <% @teams.each do |team| %>
-        <li><%= "#{team.location} #{team.name}" %></li>
+        <option id='<%=team.abbrev%>-away'><%= "#{team.location} #{team.name}" %></option>
         <% end %>
-      </ul>
-    </div>
-    <div class="btn-group">
-      <button class="btn dropdown-toggle" data-toggle="dropdown">
-      Home Team
-      <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
+    </select>
+    <select class="selectpicker span3" multiple title="Home Team">
         <% @teams.each do |team| %>
-        <li><%= "#{team.location} #{team.name}" %></li>
+        <option id='<%=team.abbrev%>-home'><%= "#{team.location} #{team.name}" %></option>
         <% end %>
-      </ul>
-    </div>
-  </div>
-</form>
+    </select>
+</div>

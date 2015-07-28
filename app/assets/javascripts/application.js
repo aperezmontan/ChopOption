@@ -13,7 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require moment
 //= require bootstrap-sprockets
+//= require bootstrap-datetimepicker
+//= require bootstrap-select
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //= require_tree .
 
 $(document).on('ready page:load', function() {
@@ -35,15 +40,18 @@ $(document).on('ready page:load', function() {
 
     signUp('.signup-button','players/new','GET');
 
-    // $(function() {
-    //   $('#datetimepicker1').datetimepicker({
-    //     language: 'pt-BR'});
-    // });
+    addGames('.date-of-week .dropdown-menu','/new_game','GET');
 
-    // poolSelect(".page-content #home-team-1-box").on('click', function(){
+    $('.page-content').on("focus", "#datetimepicker3:not(.hasDatePicker)", function(){
+      console.log(this);
+      $('#datetimepicker3').datetimepicker({
+        format: 'LT'
+      });
+    })
 
-    // })
-
+      // $('#datetimepicker3').datetimepicker({
+      //   format: 'LT'
+      // });
 
 });
 
@@ -85,7 +93,28 @@ var nav = function(selector, url, method) {
   })
 }
 
-// var rulesToggle = function(selector,elementToToggle) {
-
-// }
+var addGames = function(selector, url, method) {
+  $(selector).on('focusout', function(event){
+    event.preventDefault();
+    console.log('activated')
+    $.ajax({
+      method: method,
+      url: url,
+    })
+    .done(function ( response ) {
+      // console.log(response);
+      $('#game-input-container').html(response).hide().promise().done(function(){
+        $('.selectpicker').selectpicker();
+        $('.selectpicker').selectpicker('refresh');
+      });
+      $('#game-input-container').fadeIn( "slow" );
+    });
+    // $(function () {
+    //   $('#datetimepicker3').datetimepicker({
+    //     format: 'LT'
+    //   });
+    // });
+    // $('#datetimepicker3').initialized = false;
+  })
+}
 
