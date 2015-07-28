@@ -14,6 +14,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
+@import "bootstrap-select";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -106,11 +108,7 @@
   display: none;
 }
 
-.team-cell {
-  cursor: pointer;
-}
-
-.team-cell:hover {
+.team-cell button:hover {
   background: #3498db;
 }
 
