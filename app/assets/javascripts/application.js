@@ -40,7 +40,7 @@ $(document).on('ready page:load', function() {
 
     signUp('.signup-button','players/new','GET');
 
-    addGames('.date-of-week .dropdown-menu','/new_game','GET');
+    getDays('.date-of-week option:selected');
 
     $('.page-content').on("focus", "#datetimepicker3:not(.hasDatePicker)", function(){
       console.log(this);
@@ -93,8 +93,19 @@ var nav = function(selector, url, method) {
   })
 }
 
+var getDays = function(container){
+  $('ul').on('click', function(){
+    console.log('active');
+    var days = [];
+    $.each($(container), function(){
+      days.push($(this).val())
+    });
+    alert("You have selected the country - " + days.join(", "));
+  })
+}
+
 var addGames = function(selector, url, method) {
-  $(selector).on('focusout', function(event){
+  $(selector).on('focus', function(event){
     event.preventDefault();
     console.log('activated')
     $.ajax({
