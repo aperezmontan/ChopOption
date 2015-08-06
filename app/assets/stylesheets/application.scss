@@ -99,6 +99,16 @@
   margin: auto;
 }
 
+#pool-progress-bar {
+  // display: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.progress {
+  margin-bottom: 10px;
+}
+
 #rules-div {
   margin-left: 10px;
   margin-right: 10px;
@@ -130,6 +140,12 @@
   padding-left: 0;
   padding-right: 0;
   vertical-align: middle;
+}
+
+.pool-submit-button {
+  background-color: #2ecc71;
+  border: none;
+  display: none;
 }
 
 .signin-button {

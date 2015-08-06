@@ -10,12 +10,12 @@
             </div>
         </div>
     </div>
-    <select class="selectpicker span3" multiple title="Away Team">
+    <select class="selectpicker" title="Away Team">
         <% @teams.each do |team| %>
         <option id='<%=team.abbrev%>-away'><%= "#{team.location} #{team.name}" %></option>
         <% end %>
     </select>
-    <select class="selectpicker span3" multiple title="Home Team">
+    <select class="selectpicker" title="Home Team">
         <% @teams.each do |team| %>
         <option id='<%=team.abbrev%>-home'><%= "#{team.location} #{team.name}" %></option>
         <% end %>

@@ -27,10 +27,11 @@ ActiveRecord::Schema.define(version: 20150720211437) do
     t.integer  "home_team_id",                null: false
     t.integer  "away_team_id",                null: false
     t.integer  "week_id",                     null: false
-    t.datetime "start_time",                  null: false
+    t.time     "start_time",                  null: false
+    t.string   "day_of_week",                 null: false
     t.integer  "home_team_score", default: 0, null: false
     t.integer  "away_team_score", default: 0, null: false
-    t.integer  "spread_id",                   null: false
+    t.integer  "spread_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
